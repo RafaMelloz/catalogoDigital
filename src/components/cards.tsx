@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import { cashFormat } from "../utils/cashFormat"
-import { IoClose } from "react-icons/io5";
 
 interface card {
     id: number
@@ -20,18 +19,18 @@ export function Cards({ info }: { info: card }) {
             <Link
                 to={`/product/${info.id}`}
                 className="
-            bg-blue-950/20 
-            max-w-72 
-            w-full
-            rounded-lg 
-            border-[1px] 
-            border-teal-100/20 
-            px-4 py-4
-            flex 
-            flex-col
-            
-            hover:shadow-md 
-            hover:shadow-blue-900
+                bg-blue-950/20 
+                max-w-72 
+                w-full
+                rounded-lg 
+                border-[1px] 
+                border-teal-100/20 
+                px-4 py-4
+                flex 
+                flex-col
+                
+                hover:shadow-md 
+                hover:shadow-blue-900
             "
             >
                 <img
@@ -46,7 +45,7 @@ export function Cards({ info }: { info: card }) {
                     {info.description}
                 </p>
 
-                <p className="text-base font-semibold text-cyan-400/90">R$ {cashFormat(info.price)}</p>
+                <h4 className="text-base font-semibold text-cyan-400/90 py-1">R$ {cashFormat(info.price)}</h4>
             </Link>
         :
             <div   
@@ -74,7 +73,7 @@ export function Cards({ info }: { info: card }) {
                     {info.description}
                 </p>
 
-                <p className="text-base font-semibold text-whiteo/90">Esgotado <IoClose /></p>
+                <h4 className="text-base font-semibold text-white/90 bg-gray-800 py-1 px-3 w-min rounded">Esgotado</h4>
             </div>
         
     )
