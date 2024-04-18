@@ -1,0 +1,30 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "Iphone 13",
+            "description": "6.1 polegadas, A15 Bionic, Super Retina XDR OLED, Ceramic Glass, Câmera dupla, grande angular, ultra grande angular, 5G",
+            "price": 3000,
+            "mainImg": "https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+13/iPhone+13+Thumb.png",
+            "overviewImgs": {
+                "firstImg": "https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+13/iPhone+13+Thumb.png",
+                "secondaryImg": "https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+13/iPhone+13+-+2.jpg",
+                "thirdImg": "https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+13/iPhone+13+-+3.jpg"
+            },
+            "qntProducts": 10
+        },
+        {
+            "id": "2",
+            "name": "iPhone 14",
+            "description": "6.1 polegadas, A15, Super Retina XDR OLED, Ceramic Shield, Câmera dupla, grande angular, ultra grande angular, telefoto + sensor proximidade, 5G",
+            "price": 4000,
+            "mainImg": "https://www.allugator.com/_next/image?url=https%3A%2F%2Fyacare-products-image.s3.sa-east-1.amazonaws.com%2Fnew-site%2FIPHONE%2B14%2FiPhone%2B14%2BThumb.png&w=1920&q=75",
+            "overviewImgs": {
+                "firstImg": "https://www.allugator.com/_next/image?url=https%3A%2F%2Fyacare-products-image.s3.sa-east-1.amazonaws.com%2Fnew-site%2FIPHONE%2B14%2FiPhone%2B14%2BThumb.png&w=1920&q=75",
+                "secondaryImg": "https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+14/iPhone+14++-+2.jpg",
+                "thirdImg": "https://yacare-products-image.s3.sa-east-1.amazonaws.com/new-site/IPHONE+14/iPhone+14++-+3.jpg"
+            },
+            "qntProducts": 0
+        }
+    ]
+}
