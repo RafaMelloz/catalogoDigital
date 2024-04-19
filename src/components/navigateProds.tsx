@@ -1,7 +1,7 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-export function NavigateProds({name} : {name: string}) {
+export function NavigateProds({ name }: { name: string | null }) {
     return(
         <div className="
         my-5  
@@ -12,7 +12,11 @@ export function NavigateProds({name} : {name: string}) {
         max-md:px-3">
             <Link className="hover:text-slate-200" to={'/'}>HOME</Link>
             <IoIosArrowForward />
-            <span className="uppercase text-slate-200">{name}</span>
+            {
+                name === null
+                    ?  <span className="uppercase text-slate-200">Carrinho de compras</span>
+                    : <span className="uppercase text-slate-200">{name}</span>
+            }
         </div>
     )
 }
