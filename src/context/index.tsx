@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 interface CarShopContextType {
     carShop: any[];
@@ -12,8 +12,14 @@ export const CarShopDataContext = createContext<CarShopContextType>({
     setCarShop: () => { }
 });
 
+
+
 export const CarShopContextProvider = ({ children }: any) => {
     const [carShop, setCarShop] = useState<any[]>(carShopArray);
+
+    useEffect(() => {
+        console.log(carShop)
+    }, [carShop])
 
     return (
         <CarShopDataContext.Provider value={{ carShop, setCarShop }}>

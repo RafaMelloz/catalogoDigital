@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { cashFormat } from "../utils/cashFormat"
+import { CarShopDataContext } from "../context"
 
 interface Product {
     name: string
@@ -13,6 +14,7 @@ interface Product {
 export function Details({ product }:{product : Product}){
 
     const [quantity, setQuantity] = useState(1);
+    const { carShop, setCarShop } = useContext(CarShopDataContext)
 
     function addQnt() {
         setQuantity(quantity + 1)
@@ -22,6 +24,11 @@ export function Details({ product }:{product : Product}){
         if (quantity != 1) {
             setQuantity(quantity - 1)
         }
+    }
+
+    function addToCar(){
+        setCarShop([...carShop, {...product, quantity: quantity}])
+        console.log(product)
     }
 
     return(
@@ -37,7 +44,8 @@ export function Details({ product }:{product : Product}){
             </div>
 
             <h3 className="text-2xl my-3">R$ {cashFormat(product.price * quantity)}</h3>
-            <button
+            <button 
+            onClick={addToCar}
                 className=" bg-cyan-500/70 w-full max-w-[220px] my-2 py-2 font-semibold text-lg rounded-full cursor-pointer hover:bg-cyan-500/50 hover:text-white/60">
                 Adicionar ao carrinho
             </button>
