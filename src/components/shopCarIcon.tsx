@@ -10,9 +10,13 @@ export function ShopCarIcon(){
     return(
         
 
-        <Link to={'/carrinho'}>
+        <Link to={'/carrinho'} className="relative">
             <FaCartShopping  className="text-2xl"/>
-            <span>{carShop.length}</span>
+            {carShop.length > 0 
+                
+                ? <span className="absolute -top-4 -right-2 bg-cyan-600 px-1 rounded-full font-semibold">{carShop.length}</span>
+                :null
+            }
         </Link>
     )
 }
