@@ -1,0 +1,23 @@
+.swal2-popup.swal2-toast{
+    background-color: #10182c!important;
+}
+
+div:where(.swal2-container) div:where(.swal2-timer-progress-bar) {
+    background-color: #0688a1!important;
+}
+
+.swal2-popup.swal2-toast .swal2-success {
+    border-color: #12cdf0;
+}
+
+div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
+    background-color: #12cdf0;
+}
+
+.swal2-title{
+    color: white!important;
+}
+
+div:where(.swal2-icon).swal2-success .swal2-success-ring {
+    border: 0.25em solid rgba(95, 235, 253, 0.479)!important;
+}

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { cashFormat } from "../utils/cashFormat"
 import { CarShopDataContext } from "../context"
+import Swal from "sweetalert2"
 
 interface Product {
     name: string
@@ -28,7 +29,21 @@ export function Details({ product }:{product : Product}){
 
     function addToCar(){
         setCarShop([...carShop, {...product, quantity: quantity}])
-        console.log(product)
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 1900,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "Produto adicionado ao carrinho!"
+        });
     }
 
     return(
