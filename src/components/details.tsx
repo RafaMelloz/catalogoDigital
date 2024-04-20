@@ -2,8 +2,10 @@ import { useContext, useState } from "react"
 import { cashFormat } from "../utils/cashFormat"
 import { CarShopDataContext } from "../context"
 import Swal from "sweetalert2"
+import { QntCounter } from "./qntCounter"
 
 interface Product {
+    id:number,
     name: string
     description?: string
     price: number
@@ -17,18 +19,19 @@ export function Details({ product }:{product : Product}){
     const [quantity, setQuantity] = useState(1);
     const { carShop, setCarShop } = useContext(CarShopDataContext)
 
-    function addQnt() {
-        setQuantity(quantity + 1)
-    }
-
-    function removeQnt() {
-        if (quantity != 1) {
-            setQuantity(quantity - 1)
-        }
-    }
 
     function addToCar(){
-        setCarShop([...carShop, {...product, quantity: quantity}])
+        const existingProductIndex = carShop.findIndex(item => item.id === product.id);
+
+        if (existingProductIndex !== -1) {
+            const updatedCarShop = [...carShop];
+            updatedCarShop[existingProductIndex].quantity += quantity;
+            setCarShop(updatedCarShop);
+        } else {
+            setCarShop([...carShop, { ...product, quantity: quantity }]);
+        }
+
+        
         const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -52,11 +55,7 @@ export function Details({ product }:{product : Product}){
             <p className="my-5 text-white/90">{product.description}</p>
 
             <p className="text-xs font-semibold text-white/90 tracking-widest">QUANTIDADE DE PRODUTOS:</p>
-            <div className="flex gap-5 bg-cyan-500/80  w-min text-gray-200 font-bold rounded  items-center border border-black">
-                <button onClick={removeQnt} className="text-xl px-[14px] border-r-2 rounded hover:bg-cyan-500/100">-</button>
-                <span>{quantity}</span>
-                <button onClick={addQnt} className="text-xl px-3 border-l-2 rounded hover:bg-cyan-500/100 ">+</button>
-            </div>
+            <QntCounter quantity={quantity} setQuantity={setQuantity} />
 
             <h3 className="text-2xl my-3">R$ {cashFormat(product.price * quantity)}</h3>
             <button 
