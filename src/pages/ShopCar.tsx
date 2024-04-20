@@ -1,4 +1,6 @@
+import { Footer } from "../components/footer";
 import { Header } from "../components/header";
+import { MyCarList } from "../components/myCarList";
 import { NavigateProds } from "../components/navigateProds";
 
 export function ShopCar(){
@@ -6,6 +8,10 @@ export function ShopCar(){
         <>
             <Header />
             <NavigateProds name={null} />
+
+
+            <MyCarList/>
+            <Footer/>
         </>
         
     )
