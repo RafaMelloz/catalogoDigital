@@ -8,6 +8,7 @@ import { Details } from "../components/details";
 import { CarrosselImg } from "../components/carroselImg";
 
 interface Product {
+    id: number
     name: string
     description?: string
     price: number
@@ -33,6 +34,7 @@ export function UniqueProd() {
         axios.get(`http://localhost:3000/data/${idURL}`)
             .then(function (res) {
                 setProduct(res.data)
+                console.log('id', product)
             })
             .catch(function (error) {
                 console.error("deu esse erro", error)
