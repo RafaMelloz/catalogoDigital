@@ -7,8 +7,6 @@ export function ShopCar(){
         <>
             <Header />
             <NavigateProds name={null} />
-
-
             <MyCarList/>
         </>
         

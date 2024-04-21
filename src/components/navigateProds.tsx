@@ -10,7 +10,7 @@ export function NavigateProds({ name }: { name: string | null }) {
         text-slate-400 text-xs 
         font-medium tracking-wider
         max-md:px-3">
-            <Link className="hover:text-slate-200" to={'/'}>HOME</Link>
+            <Link className="hover:text-slate-200" to={'/'}>INICIO</Link>
             <IoIosArrowForward />
             {
                 name === null

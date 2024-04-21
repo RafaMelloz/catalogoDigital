@@ -6,7 +6,6 @@ interface qnt {
 
 
 export function QntCounter(props: qnt){
-
     const { quantity, setQuantity } = props
 
     function addQnt() {
