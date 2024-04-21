@@ -2,6 +2,7 @@ import { FaTrash } from "react-icons/fa6"
 import { QntCounter } from "./qntCounter"
 import { cashFormat } from "../utils/cashFormat"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 interface att{
     id: number
     name: string
@@ -21,7 +22,7 @@ interface ShopCarCardsProps {
 export function ShopCarCards({ product, removeFromCar, setCarShop }: ShopCarCardsProps) {
 
     const [quantity, setQuantity] = useState(product.quantity);
-    const [price, setPrice] = useState(product.price);
+    const [price] = useState(product.price);
     const [priceXQnt, setPriceXQnt] = useState(0);
 
     useEffect(() => {
@@ -45,13 +46,11 @@ export function ShopCarCards({ product, removeFromCar, setCarShop }: ShopCarCard
     return (
         <li key={product.id} className=" bg-gray-950/50 py-3 my-3">
             <div className="flex">
-                <img src={product.mainImg} className="max-w-24 " alt="product.name" />
-
+                <img src={product.mainImg} className="max-w-24 " alt="product.name"/>
                 <div>
-                    <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+                    <Link to={`/product/${product.id}`} className="text-xl font-semibold mb-2">{product.name}</Link>
                     <p className="text-sm">{product.description}</p>
                 </div>
-
                 <FaTrash className="w-7 mx-3" onClick={() => removeFromCar(product.id)} />
             </div>
 

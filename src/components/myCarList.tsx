@@ -24,7 +24,7 @@ export function MyCarList() {
                 </ul>
             </div>
 
-            <div className="bg-gray-800/30 max-w-96 w-full max-h-52">
+            <div className="bg-gray-800/30 max-w-96 w-full max-h-40 p-4">
                 <ShopCarSummary products={carShop} />
             </div>
         </main>
