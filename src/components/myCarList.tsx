@@ -24,7 +24,7 @@ export function MyCarList() {
     }
 
     return (
-        <main className="flex justify-between max-w-5xl m-auto pt-8">
+        <main className="flex justify-between max-w-5xl m-auto pt-8  max-md:flex-direction: column max-md:flex-col max-md:items-center max-md:gap-3  max-md:px-3">
             <div className="bg-gray-800/30 max-w-xl w-full p-4">
                 <h3 className="text-lg font-bold tracking-wide">Meu carrinho</h3>
                 <ul>
