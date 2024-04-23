@@ -10,7 +10,7 @@ interface Product {
     qntProdutos: number;
     mainImg: string;
     quantity: number;
-    overviewImgs: object;
+    overviewImg: object;
 }
 
 interface ShopCarSummaryProps {
@@ -18,7 +18,7 @@ interface ShopCarSummaryProps {
 }
 
 export function ShopCarSummary({ products }: ShopCarSummaryProps) {
-    const [priceTotal , setPriceTotal] = useState(0)
+    const [priceTotal , setPriceTotal] = useState<number>(0)
     const [qntTotal, setQntTotal]= useState(0)
 
     useEffect(() => {
@@ -30,8 +30,8 @@ export function ShopCarSummary({ products }: ShopCarSummaryProps) {
 
     const exportToExcel = () => {
         const data = [
-            ...products.map(({ mainImg, overviewImgs, qntProdutos, ...rest }) => rest), // Removendo os campos indesejados
-            { priceTotal }
+            ...products.map(({ mainImg, overviewImg, qntProdutos, ...rest }) => rest), // Removendo os campos indesejados
+            { priceTotal:cashFormat(priceTotal) }
         ];
 
         const wb = XLSX.utils.book_new(); // cria um novo objeto de workbook
