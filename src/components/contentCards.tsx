@@ -24,7 +24,7 @@ export function ContentCards() {
             .catch(function (error) {
                 console.error(error)
             })
-    }, [products])
+    }, [])
 
     return (
         <main>

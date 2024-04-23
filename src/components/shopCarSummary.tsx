@@ -4,10 +4,10 @@ import * as XLSX from 'xlsx';
 
 interface Product {
     id: number;
-    name: string;
-    description?: string;
-    price: number;
-    qntProducts: number;
+    nome: string;
+    descricao?: string;
+    preco: number;
+    qntProdutos: number;
     mainImg: string;
     quantity: number;
     overviewImgs: object;
@@ -22,7 +22,7 @@ export function ShopCarSummary({ products }: ShopCarSummaryProps) {
     const [qntTotal, setQntTotal]= useState(0)
 
     useEffect(() => {
-        setPriceTotal(products.reduce((acc, item) => acc + item.price, 0))
+        setPriceTotal(products.reduce((acc, item) => acc + item.preco, 0))
         setQntTotal(products.reduce((acc, item) => acc + item.quantity, 0))
     }, [products]);
 
@@ -30,7 +30,7 @@ export function ShopCarSummary({ products }: ShopCarSummaryProps) {
 
     const exportToExcel = () => {
         const data = [
-            ...products.map(({ mainImg, overviewImgs, qntProducts, ...rest }) => rest), // Removendo os campos indesejados
+            ...products.map(({ mainImg, overviewImgs, qntProdutos, ...rest }) => rest), // Removendo os campos indesejados
             { priceTotal }
         ];
 

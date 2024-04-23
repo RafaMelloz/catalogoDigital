@@ -7,11 +7,11 @@ div:where(.swal2-container) div:where(.swal2-timer-progress-bar) {
 }
 
 .swal2-popup.swal2-toast .swal2-success {
-    border-color: #12cdf0;
+    border-color: #12cdf0!important;
 }
 
 div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
-    background-color: #12cdf0;
+    background-color: #12cdf0!important;
 }
 
 .swal2-title{
