@@ -14,6 +14,13 @@ div:where(.swal2-icon).swal2-success [class^=swal2-success-line] {
     background-color: #12cdf0!important;
 }
 
+div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line] {
+    background-color: #12cdf0!important;
+}
+
+div:where(.swal2-icon).swal2-error {
+   border-color: #12cff08e!important;
+}
 .swal2-title{
     color: white!important;
 }

@@ -22,17 +22,17 @@ interface ShopCarCardsProps {
 export function ShopCarCards({ product, removeFromCar, setCarShop }: ShopCarCardsProps) {
 
     const [quantity, setQuantity] = useState(product.quantity);
-    const [price] = useState(product.preco);
+    const [preco] = useState(product.preco);
     const [priceXQnt, setPriceXQnt] = useState(0);
 
     useEffect(() => {
-        const updatedPriceXQnt = price * quantity;
+        const updatedPriceXQnt = preco * quantity;
         setPriceXQnt(updatedPriceXQnt);
         updateQuantity(quantity, updatedPriceXQnt); // Atualize a quantidade com o novo valor de priceXQnt
-    }, [quantity, price]); // Adicione 'price' como dependência também
+    }, [quantity, preco]); // Adicione 'price' como dependência também
 
     const updateQuantity = (newQuantity: number, newPriceXQnt: number) => {
-        const updatedProduct = { ...product, quantity: newQuantity, price: newPriceXQnt };
+        const updatedProduct = { ...product, quantity: newQuantity, preco: newPriceXQnt };
         setCarShop(prevCarShop => {
             return prevCarShop.map(item => {
                 if (item.id === product.id) {

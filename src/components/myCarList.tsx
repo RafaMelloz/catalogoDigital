@@ -16,7 +16,7 @@ export function MyCarList() {
         // Atualizar os valores dos itens subsequentes
         for (let i = removedIndex; i < updatedCarShop.length; i++) {
             updatedCarShop[i].quantity = updatedCarShop[i + 1]?.quantity ?? updatedCarShop[i].quantity;
-            updatedCarShop[i].price = updatedCarShop[i + 1]?.price ?? updatedCarShop[i].price;
+            updatedCarShop[i].preco = updatedCarShop[i + 1]?.preco ?? updatedCarShop[i].preco;
         }
 
         setCarShop(updatedCarShop);
