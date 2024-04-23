@@ -3,10 +3,10 @@ import { Cards } from "./cards";
 import axios from "axios";
 interface data{
     id: number
-    name: string
-    description?: string
-    price: number
-    qntProducts: number
+    nome: string
+    descricao?: string
+    preco: number
+    qntProdutos: number
     mainImg: string
     overviewImgs: object
 }
@@ -14,10 +14,10 @@ interface data{
 export function ContentCards() {
     const [products, setProducts] = useState<data[]>([])
     useEffect(() => {
-        axios.get('http://localhost:3000/data')
+        axios.get('https://apicatalog.onrender.com/products')
             .then(function (res) {
-                // Ordena os produtos e coloca os com qntProducts=0 por último
-                const sortedProducts = res.data.sort((a:any, b:any) => a.qntProducts - b.qntProducts);
+                
+                const sortedProducts = res.data.products.sort((a: any, b: any) => a.qntProdutos - b.qntProdutos);
                 const reversedProducts = sortedProducts.reverse();
                 setProducts(reversedProducts);
             })

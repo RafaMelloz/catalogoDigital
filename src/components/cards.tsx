@@ -3,10 +3,10 @@ import { cashFormat } from "../utils/cashFormat"
 
 interface card {
     id: number
-    name: string
-    description?: string
-    price: number
-    qntProducts: number
+    nome: string
+    descricao?: string
+    preco: number
+    qntProdutos: number
     mainImg: string
     overviewImgs: object
 }
@@ -15,7 +15,7 @@ interface card {
 export function Cards({ info }: { info: card }) {
 
     return(
-        info.qntProducts != 0 ?
+        info.qntProdutos != 0 ?
             <Link
                 to={`/product/${info.id}`}
                 className="
@@ -36,16 +36,16 @@ export function Cards({ info }: { info: card }) {
                 <img
                     className="max-w-40 mx-auto"
                     src={info.mainImg}
-                    alt={info.name}
+                    alt={info.nome}
                 />
 
-                <h2 className="text-xl font-semibold">{info.name}</h2>
+                <h2 className="text-xl font-semibold">{info.nome}</h2>
 
                 <p className="capitalize overflow-hidden text-ellipsis whitespace-nowrap text-white/60 py-2">
-                    {info.description}
+                    {info.descricao}
                 </p>
 
-                <h4 className="text-base font-semibold text-cyan-400/90 py-1">R$ {cashFormat(info.price)}</h4>
+                <h4 className="text-base font-semibold text-cyan-400/90 py-1">R$ {cashFormat(info.preco)}</h4>
             </Link>
         :
             <div   
@@ -64,13 +64,13 @@ export function Cards({ info }: { info: card }) {
                 <img
                     className="max-w-40 mx-auto"
                     src={info.mainImg}
-                    alt={info.name}
+                    alt={info.nome}
                 />
 
-                <h2 className="text-xl font-semibold">{info.name}</h2>
+                <h2 className="text-xl font-semibold">{info.nome}</h2>
 
                 <p className="capitalize overflow-hidden text-ellipsis whitespace-nowrap text-white/60 py-2">
-                    {info.description}
+                    {info.descricao}
                 </p>
 
                 <h4 className="text-base font-semibold text-white/90 bg-gray-800 py-1 px-3 w-min rounded">Esgotado</h4>
