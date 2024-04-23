@@ -6,7 +6,6 @@ import '../assets/carrossel.css'
 import 'swiper/css';
 
 
-
 interface Images {
     firstImg: string
     secondaryImg: string
