@@ -17,7 +17,7 @@ export function Cards({ info }: { info: card }) {
     return(
         info.qntProdutos != 0 ?
             <Link
-                to={`/product/${info.id}`}
+                to={`/produto/${info.id}`}
                 className="
                 bg-blue-950/20 
                 max-w-72 

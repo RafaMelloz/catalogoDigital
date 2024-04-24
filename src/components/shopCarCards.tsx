@@ -48,7 +48,7 @@ export function ShopCarCards({ product, removeFromCar, setCarShop }: ShopCarCard
             <div className="flex ">
                 <img src={product.mainImg} className="max-w-24 " alt="product.name"/>
                 <div className="w-full">
-                    <Link to={`/product/${product.id}`} className="text-xl font-semibold mb-2">{product.nome}</Link>
+                    <Link to={`/produto/${product.id}`} className="text-xl font-semibold mb-2">{product.nome}</Link>
                     <p className="text-sm">{product.descricao}</p>
                 </div>
                 <FaTrash className="w-7 mx-3" onClick={() => removeFromCar(product.id)} />

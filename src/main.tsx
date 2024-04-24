@@ -9,6 +9,7 @@ import { ShopCar } from './pages/ShopCar.tsx'
 import './index.css'
 import './assets/scrollbar.css'
 import './assets/alert.css'
+import { Page404 } from './pages/page404.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -16,8 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <CarShopContextProvider>
         <Routes>
           <Route index path='/' element={<App />} />
-          <Route path='/product/:id' element={<UniqueProd />} />
+          <Route path='/produto/:id' element={<UniqueProd />} />
           <Route path='/carrinho' element={<ShopCar />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </CarShopContextProvider>
     </BrowserRouter>
