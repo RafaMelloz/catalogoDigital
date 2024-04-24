@@ -20,7 +20,7 @@ export function MyCarList() {
         }
 
         setCarShop(updatedCarShop);
-        errorAlert();
+        errorAlert("Produto removido!");
     }
 
     return (

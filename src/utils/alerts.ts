@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export const errorAlert =()=>{
+export const errorAlert = (msg: string)=>{
     const Toast = Swal.mixin({
         toast: true,
         position: "top-end",
@@ -14,7 +14,7 @@ export const errorAlert =()=>{
     });
     Toast.fire({
         icon: "error",
-        title: "Produto removido!"
+        title: msg
     });
 }
 

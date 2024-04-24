@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { cashFormat } from "../utils/cashFormat";
 import * as XLSX from 'xlsx';
+import { errorAlert } from "../utils/alerts";
 
 interface Product {
     id: number;
@@ -29,15 +30,19 @@ export function ShopCarSummary({ products }: ShopCarSummaryProps) {
 
 
     const exportToExcel = () => {
-        const data = [
-            ...products.map(({ mainImg, overviewImg, qntProdutos, ...rest }) => rest), // Removendo os campos indesejados
-            { priceTotal:cashFormat(priceTotal) }
-        ];
+       if (products.length === 0) {
+           errorAlert("Carrinho vazio!")
+       } else{
+           const data = [
+               ...products.map(({ mainImg, overviewImg, qntProdutos, ...rest }) => rest), // Removendo os campos indesejados
+               { priceTotal: cashFormat(priceTotal) }
+           ];
 
-        const wb = XLSX.utils.book_new(); // cria um novo objeto de workbook
-        const ws = XLSX.utils.json_to_sheet(data); //Esta linha converte os dados no array 'data' em uma planilha
-        XLSX.utils.book_append_sheet(wb, ws, "Pedido");//anexa a planilha recém-criada ao workbook e a da um nome
-        XLSX.writeFile(wb, "pedido.xlsx");// Isso iniciará o download do arquivo Excel com os dados do carrinho de compras.
+           const wb = XLSX.utils.book_new(); // cria um novo objeto de workbook
+           const ws = XLSX.utils.json_to_sheet(data); //Esta linha converte os dados no array 'data' em uma planilha
+           XLSX.utils.book_append_sheet(wb, ws, "Pedido");//anexa a planilha recém-criada ao workbook e a da um nome
+           XLSX.writeFile(wb, "pedido.xlsx");// Isso iniciará o download do arquivo Excel com os dados do carrinho de compras.
+       }
     }
 
     return (
