@@ -12,7 +12,7 @@ interface Images {
     thirdImg: string,
 }
 
-export function CarrosselImg({ imgs }: { imgs: Images}){
+export function CarrosselProducts({ imgs }: { imgs: Images}){
     return(
         <div className="max-w-[408px] w-full  max-md:px-3">
             <Swiper

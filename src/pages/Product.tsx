@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { NavigateProds } from "../components/navigateProds";
 import { Details } from "../components/details";
-import { CarrosselImg } from "../components/carroselImg";
+import { CarrosselProducts } from "../components/carrosselProducts";
 
 interface Product {
     id: string
@@ -50,10 +50,10 @@ export function Product() {
             <Header />
             {product &&
                 <>
-                    <NavigateProds name={product.nome} />
+                    <NavigateProds name={product.nome}/>
                     <main className="bg-gray-900/40 py-5">
                         <div className="max-w-[1216px] mx-auto flex justify-evenly max-md:flex-col-reverse max-md:items-center">
-                        <CarrosselImg imgs={dataImages ? dataImages : { firstImg: "", secondaryImg: "", thirdImg: "" }} />
+                        <CarrosselProducts imgs={dataImages ? dataImages : { firstImg: "", secondaryImg: "", thirdImg: "" }} />
                         <Details product={product} />
                         </div>
                     </main>
