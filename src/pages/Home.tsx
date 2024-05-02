@@ -1,15 +1,13 @@
-import { ContentCards } from "../components/contentCards";
+import { CardsList } from "../components/cardsList";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 
 
-export function App() {
-
-
+export function Home() {
   return (
     <>
       <Header />
-      <ContentCards />
+      <CardsList />
       <Footer />
     </>
 

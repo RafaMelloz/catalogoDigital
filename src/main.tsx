@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { CarShopContextProvider } from './context/index.tsx'
-import { App } from './pages/App.tsx'
-import { UniqueProd } from './pages/UniqueProd.tsx'
+import { Home } from './pages/Home.tsx'
+import { Product } from './pages/Product.tsx'
 import { ShopCar } from './pages/ShopCar.tsx'
 
 import './index.css'
@@ -16,8 +16,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <CarShopContextProvider>
         <Routes>
-          <Route index path='/' element={<App />} />
-          <Route path='/produto/:id' element={<UniqueProd />} />
+          <Route index path='/' element={<Home />} />
+          <Route path='/produto/:id' element={<Product />} />
           <Route path='/carrinho' element={<ShopCar />} />
           <Route path="*" element={<Page404 />} />
         </Routes>

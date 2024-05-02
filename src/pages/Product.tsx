@@ -24,7 +24,7 @@ interface GroupImg {
 }
 
 
-export function UniqueProd() {
+export function Product() {
 
     const params = useParams();
     const idURL = params.id;
