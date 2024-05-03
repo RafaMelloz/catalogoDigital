@@ -1,6 +1,7 @@
 import { useEffect, useState} from "react";
 import { Cards } from "./cards";
 import axios from "axios";
+import { Loader } from "./loader";
 
 interface ProductData {
     id: number;
@@ -34,13 +35,19 @@ export function CardsList() {
             <h1 className="text-center text-5xl font-medium py-16">Smartphones</h1>
 
             <div className="bg-gray-900/30 p-6">
+
                 <div className="max-w-[1216px] mx-auto flex flex-wrap gap-5 justify-center md:justify-normal">
-                    {products.map((product) => (
-                        <div key={product.id}>
-                            <Cards info={product} />
-                        </div>
-                    ))}
+
+                    {products.length != 0
+                        ? ( products.map((product) => (
+                            <div key={product.id}>
+                                <Cards info={product} />
+                            </div>
+                        )))
+                        : (<Loader/>)
+                    }
                 </div>
+
             </div>
         </main>
     );
