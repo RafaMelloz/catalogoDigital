@@ -33,7 +33,7 @@ export function Product() {
     const [dataImages, setDataImages] = useState<GroupImg | undefined>(undefined);
 
     useEffect(() => {
-        axios.get(`https://apicatalog.onrender.com/products/${idURL}`)
+        axios.get(`https://api-catalog-2da8b465d1fa.herokuapp.com/products/${idURL}`)
             .then(function (res) {
                 setProduct(res.data.product)
                 if (res.data.product?.overviewImg) {

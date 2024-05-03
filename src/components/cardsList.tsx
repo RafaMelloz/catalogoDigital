@@ -18,7 +18,7 @@ export function CardsList() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://apicatalog.onrender.com/products');
+                const response = await axios.get('https://api-catalog-2da8b465d1fa.herokuapp.com/products');
                 const sortedProducts = response.data.products.sort((a: any, b: any) => a.qntProdutos - b.qntProdutos);
                 const reversedProducts = sortedProducts.reverse();
                 setProducts(reversedProducts);
